@@ -1,5 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix will create the inverse of a matrix and ## store it in cache. 
+## cacheSolve will check if the inverse matrix is in cache. If it is it will
+## retrieve it, if not it will create it. Either way, it returns the inverse 
+## matrix.
 
 ## The makeCacheMatrix function does four things: a) set the value of the matrix, b) get the value 
 ## of the matrix, c) set the value of the inverse matrix, and d) get the value 
