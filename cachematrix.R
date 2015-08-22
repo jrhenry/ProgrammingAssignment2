@@ -1,9 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix will create the inverse of a matrix and ## store it in cache. 
+## cacheSolve will check if the inverse matrix is in cache. If it is it will
+## retrieve it, if not it will create it. Either way, it returns the inverse 
+## matrix.
 
 ## The makeCacheMatrix function does four things: a) set the value of the matrix, b) get the value 
 ## of the matrix, c) set the value of the inverse matrix, and d) get the value 
-## of the inverse matrix.
+## of the inverse matrix.This function assumes the matrix is invertible.
 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
@@ -12,11 +14,11 @@ makeCacheMatrix <- function(x = matrix()) {
                 m <<- NULL
         }
         get <- function() x
-        setmatrix <- function(solve) m <<- solve
-        getmatrix <- function() m
+        setInverse <- function(solve) m <<- solve
+        getInverse <- function() m
         list(set = set, get = get,
-             setmatrix = setmatrix,
-             getmatrix = getmatrix)
+             setInverse = setInverse,
+             getInverse = getInverse)
         
 }
 
@@ -28,13 +30,13 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         
-        m <- x$getmatrix()
+        m <- x$getInverse()
         if(!is.null(m)) {
                 message("Getting cached matrix")
                 return(m)
         }
         data <- x$get()
-        m <- solve(matrix, ...)
-        x$setmatrix(m)
+        m <- solve(data, ...)
+        x$setInverse(m)
         m
 }
