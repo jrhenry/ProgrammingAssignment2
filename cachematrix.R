@@ -1,4 +1,4 @@
-## makeCacheMatrix will create the inverse of a matrix and ## store it in cache. 
+# makeCacheMatrix will create the inverse of a matrix and ## store it in cache. 
 ## cacheSolve will check if the inverse matrix is in cache. If it is it will
 ## retrieve it, if not it will create it. Either way, it returns the inverse 
 ## matrix.
